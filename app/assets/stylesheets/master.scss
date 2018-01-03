@@ -1,5 +1,10 @@
 @import "bootstrap";
 
+body {
+  background: image_url('bg.png');
+  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+}
+
 .navbar {
   font-family: "Helvetica Neue", Helvetica;
   font-weight: 200;
@@ -42,4 +47,10 @@
 
 .btn {
   border-radius: 0px;
+}
+
+.feature {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
