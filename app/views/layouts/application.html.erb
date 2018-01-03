@@ -24,15 +24,31 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Features</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Students</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <% if user_signed_in? %>          
+                <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+                <% else %>
+                <%= link_to 'Log in', new_user_session_path, class: 'dropdown-item' %>
+                <%= link_to 'Sign up', new_user_registration_path, class: 'dropdown-item' %>
+              <% end %>
+              <div class="dropdown-divider"></div>
+              <%= link_to 'About', '#', class: 'dropdown-item' %>
+              </div>
+            </li>
         </ul>
       </div>
     </nav>
+
+    <div class="container">
+      <% if notice.present? %>
+        <p class="alert alert-info"><%= notice %></p>
+      <% end %>
+      <% if alert.present? %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+    </div>
 
     <%= yield %>
   </body>
