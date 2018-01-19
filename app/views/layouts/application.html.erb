@@ -40,15 +40,18 @@
           </ul>
         </div>
       </nav>
-
+      
       <div class="container">
         <% if notice.present? %>
+          <br />
           <p class="alert alert-info"><%= notice %></p>
         <% end %>
         <% if alert.present? %>
+          <br />
           <p class="alert alert-danger"><%= alert %></p>
         <% end %>
       </div>
+
 
       <%= yield %>
     </div>
